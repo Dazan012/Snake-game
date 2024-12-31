@@ -135,3 +135,12 @@ void Logic()
     default:
         break;
     }
+
+    // Check for collision with fruit
+    if (x == fruitX && y == fruitY)
+    {
+        score += 10;             // Increase score
+        fruitX = rand() % width; // Respawn fruit
+        fruitY = rand() % height;
+        nTail++; // Increase the length of the snake's tail
+    }
