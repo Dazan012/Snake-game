@@ -18,3 +18,13 @@ enum eDirection
     DOWN
 };
 eDirection dir;
+
+void Setup()
+{
+    dir = STOP;    // Initialize direction to STOP
+    x = width / 2; // Start position of snake
+    y = height / 2;
+    fruitX = rand() % width; // Random position for fruit
+    fruitY = rand() % height;
+    score = 0; // Initialize score to 0
+}
