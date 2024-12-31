@@ -37,3 +37,34 @@ void Draw()
     for (int i = 0; i < width + 2; i++)
         cout << "#";
     cout << endl;
+
+    // Draw the game area
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (j == 0)
+                cout << "#"; // Left border
+            if (i == y && j == x)
+                cout << "O"; // Snake head
+            else if (i == fruitY && j == fruitX)
+                cout << "F"; // Fruit
+            else
+            {
+                bool isTail = false;
+                for (int k = 0; k < nTail; k++)
+                {
+                    if (tailX[k] == j && tailY[k] == i)
+                    {
+                        cout << "o"; // Snake tail
+                        isTail = true;
+                    }
+                }
+                if (!isTail)
+                    cout << " "; // Empty space
+            }
+            if (j == width - 1)
+                cout << "#"; // Right border
+        }
+        cout << endl;
+    }
