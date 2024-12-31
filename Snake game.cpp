@@ -163,3 +163,18 @@ void Logic()
         }
     }
 }
+
+int main()
+{
+    Setup();
+
+    while (dir != STOP)
+    {
+        Draw();
+        Input();
+        Logic();
+        Sleep(100); // Control the speed of the game
+    }
+
+    return 0;
+}
