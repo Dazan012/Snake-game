@@ -144,3 +144,22 @@ void Logic()
         fruitY = rand() % height;
         nTail++; // Increase the length of the snake's tail
     }
+
+    // Check for collision with walls or self
+    if (x >= width)
+        x = 0;
+    else if (x < 0)
+        x = width - 1;
+    if (y >= height)
+        y = 0;
+    else if (y < 0)
+        y = height - 1;
+
+    for (int i = 0; i < nTail; i++)
+    {
+        if (tailX[i] == x && tailY[i] == y)
+        {
+            dir = STOP; // Stop the game on self-collision
+        }
+    }
+}
