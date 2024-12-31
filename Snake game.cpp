@@ -28,3 +28,12 @@ void Setup()
     fruitY = rand() % height;
     score = 0; // Initialize score to 0
 }
+
+void Draw()
+{
+    system("cls"); // Clear the console
+
+    // Draw top border
+    for (int i = 0; i < width + 2; i++)
+        cout << "#";
+    cout << endl;
